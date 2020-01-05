@@ -60,6 +60,8 @@ pub enum OperatingSystem {
     Windows,
     /// QNX
     QNX,
+    /// Redox OS
+    Redox,
 }
 
 impl FromStr for OperatingSystem {
@@ -82,6 +84,7 @@ impl FromStr for OperatingSystem {
             "Onie" => Ok(OperatingSystem::Onie),
             "PowerPc" => Ok(OperatingSystem::PowerPc),
             "Solaris Illumos" => Ok(OperatingSystem::Solaris),
+            "Redox" => Ok(OperatingSystem::Redox),
             _ => Err(format!("Unknown operating system: {}", s)),
         }
     }
@@ -327,4 +330,8 @@ partition_types! {
     (FREEDESK_BOOT, "BC13C2FF-59E6-4262-A352-B275FD6F7172", OperatingSystem::FreeDesktop),
     /// Atari Basic Data Partition (GEM, BGM, F32)
     (ATARI_DATA, "734E5AFE-F61A-11E6-BC64-92361F002671", OperatingSystem::Atari),
+    /// Redox redoxfs Partition
+    (REDOX_REDOXFS, "527898FD-FFE3-42C2-96e3-bf5a3fa65b10", OperatingSystem::Redox),
+    /// Redox TFS partition
+    (REDOX_TFS, "544653c2-236b-41ad-b1c3-ac1fbdd90b3d", OperatingSystem::Redox),
 }
