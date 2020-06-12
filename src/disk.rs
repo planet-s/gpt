@@ -37,7 +37,7 @@ impl fmt::Display for LogicalBlockSize {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
             LogicalBlockSize::Lb512 => write!(f, "512"),
-            LogicalBlockSize::Lb4096 => write!(f, "1096"),
+            LogicalBlockSize::Lb4096 => write!(f, "4096"),
         }
     }
 }
